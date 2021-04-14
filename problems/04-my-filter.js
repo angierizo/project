@@ -18,13 +18,36 @@ let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
 });
 console.log(result2);      // ['choose', 'words', 'only']
 *******************************************************************************/
+//steps
+//make two parameters array, and cb
+//create a variable to filter(store) array
+//iterate through the array
+//make a conditional
+//return the variable (array)
+//      -make new array contain all true elements
 
-let myFilter = function() {
+let myFilter = function(array, cb) {
+let newArray = [];
+array.forEach(function(el){
+    if (cb (el)){
+        newArray.push(el)
+    }
+});
 
+
+return newArray;
 };
 
 
+let result1 = myFilter([5, 7, 4, 3, 8], function (n) {
+    return n % 2 === 0;
+});
+console.log(result1);       // [ 4, 8 ]
 
+let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
+    return s.length > 3;
+});
+console.log(result2);      // ['choose', 'words', 'only']
 
 
 
