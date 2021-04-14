@@ -15,11 +15,31 @@ let result2 = myMap(['run', 'Forrest'], function (el) {
 });
 console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 *******************************************************************************/
+//steps
+//create empty array[] to store elements
+//iterate through array using for loop
+//store each element(i) in variable
+//return new empty array
 
-let myMap = function() {
+let myMap = function(array, cb) {
+    let newArray = [];
 
+    for (let i = 0; i < array.length; i++){
+        let el = array[i];
+
+        newArray.push(cb(el))
+    }
+return newArray;
 };
 
+
+let result1 = myMap([100, 25, 81, 64], Math.sqrt);
+console.log(result1);   // [ 10, 5, 9, 8 ]
+
+let result2 = myMap(['run', 'Forrest'], function (el) {
+    return el.toUpperCase() + '!';
+});
+console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 
 
 
