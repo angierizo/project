@@ -20,6 +20,11 @@ let result3 = multiMap("hi", 5, function(s) {
 });
 console.log(result3); // hi!!!!!
 *******************************************************************************/
+//steps
+// 3 parameters in function
+    //value, n, cb
+//iterate through numbers and find value from running callback
+//return new value
 
 let multiMap = function() {
 
