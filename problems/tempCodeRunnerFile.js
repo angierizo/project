@@ -1,32 +1,24 @@
-
-    function count(array, cb) {
-        let numTrue = 0;
-        array.forEach(function (el) {
-            if (cb(el)) {
-                numTrue++;
-            }
-        });
-        return numTrue;
+function myEvery (arr,cb) {
+    for(let i= 0; i<arr.length; i++){
+        let el = arr[i];
+        if(cb(el) === false){
+            return false;
+        }
     }
+return true;
 
+};
 
-let result1 = count([18, 5, 32, 7, 100], function (n) {
-    return n % 2 === 0;
-});
-console.log(result1); // 3
+let isEven = function (num) {
+    return num % 2 === 0;
+};
 
-let result2 = count([17, 5, 31, 7, 100], function (n) {
-    return n % 2 === 0;
-});
-console.log(result2); // 1
+let hasO = function (string) {
+    return string.includes('o');
+};
 
-let result3 = count(['follow', 'the', 'yellow', 'brick', 'road'], function (str) {
-    return str.includes('o');
-});
-console.log(result3); // 3
-
-let result4 = count(['follow', 'the', 'yellow', 'brick', 'road'], function (str) {
-    return str.includes('x');
-});
-console.log(result4); // 0
+console.log(myEvery([4, 8, 6, 10], isEven));            // true
+console.log(myEvery([4, 7, 6, 10], isEven));            // false
+console.log(myEvery(['book', 'door'], hasO));           // true
+console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 
