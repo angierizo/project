@@ -5,15 +5,15 @@ passed to the callback.
 
 *******************************************************************************/
 
-    function count(array, cb) {
-        let numTrue = 0;
-        array.forEach(function (el) {
-            if (cb(el)) {
-                numTrue++;
-            }
-        });
-        return numTrue;
-    }
+    // function count(array, cb) {
+    //     let numTrue = 0;
+    //     array.forEach(function (el) {
+    //         if (cb(el)) {
+    //             numTrue++;
+    //         }
+    //     });
+    //     return numTrue;
+    // }
 
 
 let result1 = count([18, 5, 32, 7, 100], function (n) {
