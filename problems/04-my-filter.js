@@ -26,17 +26,31 @@ console.log(result2);      // ['choose', 'words', 'only']
 //return the variable (array)
 //      -make new array contain all true elements
 
+//with for loop
 let myFilter = function(array, cb) {
 let newArray = [];
-array.forEach(function(el){
-    if (cb (el)){
-        newArray.push(el)
+for(let i = 0; i< array.length; i ++) {
+    let el = array[i]
+    if(cb(el)) {
+        newArray.push(el);
     }
-});
-
-
+}
 return newArray;
-};
+}
+
+
+//with forEach
+// let myFilter = function(array, cb) {
+// let newArray = [];
+// array.forEach(function(el){
+//     if (cb (el)){
+//         newArray.push(el)
+//     }
+// });
+
+
+// return newArray;
+// };
 
 
 let result1 = myFilter([5, 7, 4, 3, 8], function (n) {
